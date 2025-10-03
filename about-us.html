@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Jaykay Agri Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.jpg">
+
+</head>
+<body class="bg-white w-full h-full">
+
+<!-- Navbar -->
+<nav class=" bg-white border-b shadow-sm fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-24 items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="assets/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full" />
+                <span class="text-xl font-bold text-green-800">JAYKAY AGRI SOLUTIONS</span>
+            </div>
+
+            <!-- Menu (Desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-green-800 transition">Home</a>
+                <a href="products.html" class="text-gray-600 hover:text-green-800 transition">Products</a>
+                <a href="about-us.html" class="text-green-700 font-semibold border-b-2 border-green-700">About</a>
+                <a href="contact-us.html" class="text-gray-600 hover:text-green-800 transition">Contact Us</a>
+            </div>
+
+            <!-- CTA Button -->
+            <!--            <div class="hidden md:flex">-->
+            <!--                <p class=" text-green-600 px-4 py-2 rounded-xl hover:bg-black transition">-->
+            <!--                    Coming soon!-->
+            <!--                </p>-->
+            <!--            </div>-->
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                    <!-- Hamburger -->
+                    <svg id="hamburger" class="h-6 w-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close (X) -->
+                    <svg id="close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t">
+        <a href="index.html" class="block text-gray-700 hover:text-green-800">Home</a>
+        <a href="products.html" class="block text-gray-700 hover:text-green-800">Products</a>
+        <a href="about-us.html" class="block text-gray-700 hover:text-green-800">About</a>
+        <a href="contact-us.html" class="block text-gray-700 hover:text-green-800">Contact</a>
+    </div>
+</nav>
+
+<script src="nav.js" defer></script>
+
+
+<div class="pt-24"></div> <!-- Spacer for fixed navbar -->
+
+<!-- About Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">About Us</h2>
+
+        <p class="text-gray-600 mb-6 leading-relaxed text-center max-w-3xl mx-auto">
+            We launched our company to revolutionize farming and are guided by our motto:
+            <span class="font-semibold text-green-700">‘Nurturing nature, enhancing yield.’</span>
+            As an organic-based agricultural company, we deliver innovative, eco-friendly products
+            that protect crops while championing sustainable practices.
+        </p>
+
+        <p class="text-gray-600 mb-6 leading-relaxed text-center max-w-3xl mx-auto">
+            We offer a diverse range of agricultural products, including organic pest control solutions,
+            natural disease management systems, soil health enhancers, and eco-friendly fertilizers.
+            These products work synergistically to safeguard crops, strengthen growth,
+            and maximize farmer yields.
+        </p>
+
+        <!-- Commitments -->
+        <div class="grid md:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white shadow-md rounded-xl p-6 text-center">
+                <h3 class="text-green-700 font-bold text-lg mb-2">QUALITY</h3>
+                <p class="text-gray-600 text-sm">Rigorously tested products ensuring efficacy and safety for crops.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-xl p-6 text-center">
+                <h3 class="text-green-700 font-bold text-lg mb-2">SUSTAINABILITY</h3>
+                <p class="text-gray-600 text-sm">Eco-friendly practices promoting long-term soil health and balance.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-xl p-6 text-center">
+                <h3 class="text-green-700 font-bold text-lg mb-2">INNOVATION</h3>
+                <p class="text-gray-600 text-sm">Continuous R&D to meet the evolving needs of farmers.</p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+            <div class="bg-green-50 rounded-xl shadow p-6">
+                <h3 class="text-xl font-bold text-green-700 mb-2">Our Mission</h3>
+                <p class="text-gray-700">To nurture nature and enhance yield by delivering innovative, organic-based solutions that safeguard crops, enrich soil health, and empower farmers to maximize productivity.</p>
+            </div>
+            <div class="bg-green-50 rounded-xl shadow p-6">
+                <h3 class="text-xl font-bold text-green-700 mb-2">Our Vision</h3>
+                <p class="text-gray-700">To be the global leader in sustainable agriculture, harmonizing high yields with ecological responsibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h2>
+        <div id="team-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-green-900 text-gray-200 py-10">
+    <div class="max-w-8xl mx-auto px-4 sm:px-32 grid gap-10 md:grid-cols-3">
+
+        <!-- Company Info -->
+        <div class="text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start space-x-3 mb-4">
+                <img src="assets/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                <span class="text-xl font-bold">JAYKAY AGRI SOLUTIONS PVT LTD.</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                Empowering farmers with smart, sustainable, and data-driven solutions
+                for a brighter agricultural future.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                <li><a href="products.html" class="hover:text-white transition">Products</a></li>
+                <li><a href="contact-us.html" class="hover:text-white transition">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>📍</span>
+                    <span>3-12-117/A/11, P.S colony, Ramanthapur, Hyd-500013</span>
+                </li>
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>📞</span>
+                    <a href="tel:+919876543210" class="hover:text-white transition">+91 9398692368</a>
+                </li>
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>✉️</span>
+                    <a href="mailto:info@jaykayagri.com" class="hover:text-white transition">jkcustomercare123@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="border-t border-green-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+        © <span id="year"></span> Jaykay Agri Solutions. All rights reserved.
+    </div>
+</footer>
+
+
+<!-- Script for auto year -->
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Dynamic Team Data -->
+<script>
+    const teamData = [
+        {
+            name: "Boppana Venu Gopal",
+            role: "Managing Director",
+            image: "assets/venugopal.jpg",
+            description: "\"Seasoned Leader with 30 Years of Expertise\"\n" +
+                "\n" +
+                "With three decades of experience in handling markets and staff, Managing Director possess a unique blend of skills that enables him to effectively manage both manufacturing units and administrative functions. His expertise spans:\n" +
+                "\n" +
+                "- Market Dynamics: Proven ability to navigate complex market landscapes, identifying opportunities and driving growth.\n" +
+                "- Staff Management: Skilled in leading diverse teams, fostering collaboration, and developing talent.\n" +
+                "- Manufacturing Operations: Hands-on experience in overseeing production processes, ensuring efficiency, and maintaining quality standards.\n" +
+                "- Administrative Excellence: Adept at managing administrative functions, including planning, organizing, and controlling resources."
+        },
+        {
+            name: "Mandalapu Kankesh",
+            role: "Director",
+            image: "assets/kankesh.jpg",
+            description: "\"Transforming Agriculture through Quality and Innovation\"\n" +
+                "\n" +
+                "With a strong foundation in agriculture and business management, Kankesh is dedicated to revolutionizing the agricultural sector. His educational background includes:\n" +
+                "\n" +
+                "- Bsc. in Agriculture, Netaji Subhash Chandra Bose College of Agriculture, Markhel\n" +
+                "- MBA in Marketing Management, Bharati Vidyapeeth, Pune\n" +
+                "- ABM (Agri Business Management), Bharati Vidyapeeth, Pune\n" +
+                "\n" +
+                "Growing up in a family with a pesticides shop, He has been exposed to rural agriculture and the needs of farmers. This experience, combined with his academic projects and professional journey, has equipped him with a unique perspective."
+        },
+        {
+            name: "Boppana Venkata Jaya Krishna",
+            role: "Director",
+            image: "assets/empty_person.jpg",
+            description: "\"Empowering Farmers through Innovation\"\n" +
+                "\n" +
+                "As a young achiever from an agricultural family background, and parents with agricultural sector  employees always been driven to make a meaningful impact in the farming sector. He completed hiss B.Tech in Artificial Intelligence at the age of 21, demonstrating his commitment to learning and growth.\n" +
+                "\n" +
+                "Through his experience working with highly qualified and large teams, He has  developed essential skills in collaboration, problem-solving, and leadership. These experiences have taught him the importance of hard work, dedication, and goal-oriented approach.\n" +
+                "\n" +
+                " Vision:*\n" +
+                "\n" +
+                "To harness the power of technology, particularly AI, to revolutionize agricultural practices. His aim to reach farmers with smart solutions, making farming easier, more efficient, and productive. By leveraging cutting-edge techniques and innovations, He is striving  to contribute to the growth and sustainability of the agricultural sector."
+        },
+    ];
+
+    const teamContainer = document.getElementById("team-container");
+
+    teamData.forEach(member => {
+        const card = document.createElement("div");
+        card.className = "bg-gray-50 rounded-xl shadow hover:shadow-lg transition overflow-hidden";
+        card.innerHTML = `
+      <img src="${member.image}" alt="${member.name}" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-green-700">${member.name}</h3>
+        <p class="text-sm text-gray-500 mb-2">${member.role}</p>
+        <p class="text-gray-600 text-sm">${member.description}</p>
+      </div>
+    `;
+        teamContainer.appendChild(card);
+    });
+</script>
+
+</body>
+</html>
