@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SuperGrow Organic Fertilizer - Jaykay Agri Solutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media | Jaykay Agri Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="assets/logo.jpg">
-
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-800">
 
-<!-- ✅ Navbar -->
-<nav class="bg-white border-b shadow-sm fixed top-0 left-0 w-full z-50">
+<nav class=" bg-white border-b shadow-sm fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24 items-center gap-3">
             <!-- Logo -->
@@ -23,11 +20,18 @@
             <!-- Menu (Desktop) -->
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-gray-600 hover:text-green-800 transition">Home</a>
-                <a href="products.html" class="text-green-700 font-semibold border-b-2 border-green-700">Products</a>
+                <a href="products.html" class="text-gray-600 hover:text-green-800 transition">Products</a>
                 <a href="about-us.html" class="text-gray-600 hover:text-green-800 transition">About</a>
-                <a href="media.html" class="text-gray-600 hover:text-green-800 transition">Media</a>
+                <a href="media.html" class="text-green-700 font-semibold border-b-2 border-green-700">Media</a>
                 <a href="contact-us.html" class="text-gray-600 hover:text-green-800 transition">Contact Us</a>
             </div>
+
+            <!-- CTA Button -->
+            <!--            <div class="hidden md:flex">-->
+            <!--                <p class=" text-green-600 px-4 py-2 rounded-xl hover:bg-black transition">-->
+            <!--                    Coming soon!-->
+            <!--                </p>-->
+            <!--            </div>-->
 
             <!-- Mobile menu button -->
             <div class="md:hidden">
@@ -60,26 +64,46 @@
 <script src="nav.js" defer></script>
 
 
-<script src="data/product-data.js"></script>
-<script src="product.js"></script>
+<!-- Media Gallery -->
+<section class="max-w-7xl mx-auto px-6 py-32">
+    <h2 class="text-2xl font-bold text-center mb-10 text-green-900">Media Gallery</h2>
 
-<!-- ✅ Products Section -->
-<section id="product-detail" class="pt-40 pb-24 p-8 sm:px-32">
-    <div class="max-w-7xl mx-auto px-6">
-
-        <!-- Section Heading -->
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-            Our Products
-        </h2>
-
-        <!-- 🔑 Product Grid (JS will fill this) -->
-        <div id="product-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-
-    </div>
+    <!-- Dynamic grid -->
+    <div id="media-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 </section>
 
+<script>
+    // Media data (images + videos)
+    const mediaItems = [
+        { type: "image", src: "assets/media/1.jpg", alt: "Farmers Results" },
+        { type: "image", src: "assets/media/2.jpg", alt: "Root Strength" },
+        { type: "video", src: "assets/media/video_1.mp4", alt: "Testimonial" },
+        { type: "video", src: "assets/media/video_2.mp4", alt: "Farmer demo" }
+    ];
 
-<!-- ✅ Footer -->
+    const mediaContainer = document.getElementById("media-container");
+
+    mediaContainer.innerHTML = mediaItems.map(item => {
+        if (item.type === "image") {
+            return `
+          <div class="bg-black flex items-center justify-center rounded-lg shadow hover:shadow-lg transition h-60">
+            <img src="${item.src}" alt="${item.alt}" class="max-h-full max-w-full object-contain">
+          </div>
+        `;
+        } else if (item.type === "video") {
+            return `
+          <div class="bg-black flex items-center justify-center rounded-lg shadow hover:shadow-lg transition h-60">
+            <video controls class="max-h-full max-w-full object-contain">
+              <source src="${item.src}" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+        `;
+        }
+    }).join("");
+</script>
+
+
 <footer class="bg-green-900 text-gray-200 py-10">
     <div class="max-w-8xl mx-auto px-4 sm:px-10 grid gap-10 md:grid-cols-3">
 
@@ -155,9 +179,7 @@
         © <span id="year"></span> Jaykay Agri Solutions. All rights reserved.
     </div>
 </footer>
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+
 
 </body>
 </html>
