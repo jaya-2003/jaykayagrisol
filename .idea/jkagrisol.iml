@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lottie-web" level="application" />
+    <orderEntry type="library" name="lottie-web" level="application" />
   </component>
 </module>

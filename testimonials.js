@@ -2,40 +2,19 @@
 
 const testimonialsData = [
     {
-        name: "Ramesh Kumar",
-        location: "Farmer, Punjab",
-        avatar: "https://i.pravatar.cc/80?img=5",
+        name: "Krishna",
+        location: "Farmer, Sangareddy",
+        avatar: "https://avatar.iran.liara.run/public/5",
         rating: 4,
         feedback: "Jaykay Agri’s smart solutions improved my yield by 40%. Highly recommend their products."
     },
     {
-        name: "Anita Devi",
-        location: "Farmer, Haryana",
-        avatar: "https://i.pravatar.cc/80?img=12",
+        name: "Venkata Rao.B",
+        location: "Farmer, Andra Pradesh",
+        avatar: "https://avatar.iran.liara.run/public/job/farmer/male",
         rating: 5,
-        feedback: "Their technology made irrigation much easier. The team is very supportive too."
+        feedback: "Their technology made farming much easier. The team is very supportive too."
     },
-    {
-        name: "Mohammed Ali",
-        location: "Farmer, UP",
-        avatar: "https://i.pravatar.cc/80?img=20",
-        rating: 5,
-        feedback: "I can now track my crop health easily. It feels like farming in the future!"
-    },
-    {
-        name: "Suman Sharma",
-        location: "Farmer, Rajasthan",
-        avatar: "https://i.pravatar.cc/80?img=30",
-        rating: 4,
-        feedback: "The crop monitoring tools saved me time and reduced costs significantly."
-    },
-    {
-        name: "Suman Sharma",
-        location: "Farmer, Rajasthan",
-        avatar: "https://i.pravatar.cc/80?img=30",
-        rating: 4,
-        feedback: "The crop monitoring tools saved me time and reduced costs significantly."
-    }
 ];
 
 // Generate star rating
@@ -51,6 +30,7 @@ function generateStars(rating) {
 function renderTestimonials() {
     const container = document.getElementById("testimonial-container");
     container.innerHTML = "";
+    container.className = "flex flex-col sm:flex-row gap-4 p-2";
 
     testimonialsData.forEach(t => {
         const card = document.createElement("div");

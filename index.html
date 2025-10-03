@@ -1,16 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Agriculture</title>
+    <title>JAYKAY AGRI SOLUTIONS</title>
+    <link rel="icon" type="image/png" href="assets/logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
     <script src="testimonials.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+    </style>
+
 
 
 </head>
 <body class="bg-white w-full h-full">
 
-<div id="navbar"></div>
+
+<nav class="bg-white border-b shadow-sm fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-24 items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="assets/logo.jpg" alt="Logo" class="h-16 w-16 rounded-full" />
+                <span class="text-xl font-bold text-green-800">JAYKAY AGRI SOLUTIONS</span>
+            </div>
+
+            <!-- Menu (Desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-green-700 font-semibold border-b-2 border-green-700">Home</a>
+                <a href="products.html" class="text-gray-600 hover:text-green-800 transition">Products</a>
+                <a href="about-us.html" class="text-gray-600 hover:text-green-800 transition">About</a>
+                <a href="contact-us.html" class="text-gray-600 hover:text-green-800 transition">Contact Us</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                    <!-- Hamburger -->
+                    <svg id="hamburger" class="h-6 w-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close (X) -->
+                    <svg id="close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t">
+        <a href="index.html" class="block text-gray-700 hover:text-green-800">Home</a>
+        <a href="products.html" class="block text-gray-700 hover:text-green-800">Products</a>
+        <a href="about-us.html" class="block text-gray-700 hover:text-green-800">About</a>
+        <a href="contact-us.html" class="block text-gray-700 hover:text-green-800">Contact</a>
+    </div>
+</nav>
+
+<script src="nav.js" defer></script>
+
+
+
 
 <!-- Hero Section -->
 <section class="relative bg-green-900 text-white w-full h-[90vh] flex items-center justify-center">
@@ -21,21 +83,43 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-4xl text-center px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
+    <div class="relative z-10 max-w-4xl text-center w-full px-6">
+        <h1 class="text-4xl md:text-5xl text-white italic mb-6">
             “Agriculture is the most healthful, most useful, and most noble employment of man.”
         </h1>
         <p class="text-lg md:text-xl text-gray-200 mb-8">
             Empowering farmers with smart solutions for a sustainable future.
         </p>
-        <a href="#"
+        <a href="products.html"
            class="inline-block bg-green-600 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg hover:bg-green-700 transition">
             Explore Our Solutions
         </a>
     </div>
 </section>
 
-<section class="bg-gray-50 py-16">
+<!-- Featured Products Section -->
+<section id="featured-products" class="bg-white py-20">
+    <div class="mx-auto px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Products</h2>
+
+        <!-- Scroll Container -->
+        <div id="featured-container"
+             class="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-4 h-fit py-1">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Categories Section -->
+<section id="categories" class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Solutions</h2>
+        <div id="categories-container" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+    </div>
+</section>
+
+<section class="bg-gray-50 pb-16 hidden md:block">
     <div class="flex flex-col mx-auto items-center">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">
             What Our Farmers Say
@@ -47,7 +131,7 @@
     </div>
 </section>
 <!-- About Us Section -->
-<section class="bg-gray-50 pb-20">
+<section class="bg-gray-50 pb-16">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Section Heading -->
@@ -60,53 +144,88 @@
 
             <!-- Image -->
             <div>
-                <img src="assets/about-us.jpg" alt="About Jaykay Agri Solutions"
+                <img src="assets/about_us.jpg" alt="About Jaykay Agri Solutions"
                      class="rounded-2xl shadow-lg object-cover w-full h-96">
             </div>
 
             <!-- Text Content -->
-            <div>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    At <span class="font-semibold text-green-700">Jaykay Agri Solutions</span>,
-                    we are committed to revolutionizing agriculture through innovation and technology.
-                    Our mission is to empower farmers with smart tools that enhance productivity,
-                    ensure sustainability, and simplify farming practices.
+            <div class="space-y-6 text-gray-600 leading-relaxed">
+
+                <p>
+                    "We launched our company to revolutionize farming and are guided by our motto:
+                    <span class="font-semibold text-green-700">‘Nurturing nature, enhancing yield.’</span>
+                    As an organic-based agricultural company, we deliver innovative, eco-friendly products
+                    that protect crops while championing sustainable practices."
                 </p>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    From precision irrigation systems to advanced soil health monitoring and
-                    drone-based crop analysis, we provide solutions tailored to modern-day farming.
-                    By combining data-driven insights with eco-friendly practices,
-                    we aim to create a brighter future for agriculture.
+
+                <p>
+                    “Also, we offer a diverse range of agricultural products, including organic pest control solutions,
+                    natural disease management systems, soil health enhancers, and eco-friendly fertilizers.
+                    These products work synergistically to provide crops with strength, safeguard their growth,
+                    and ultimately help farmers maximize their yields."
                 </p>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    With a vision of transforming farmlands into sustainable hubs of growth,
-                    we stand beside farmers, enabling them to thrive in today’s ever-changing
-                    agricultural landscape.
-                </p>
-                <a href="#contact"
-                   class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-green-700 transition">
+                <!-- CTA -->
+                <a href="about-us.html"
+                   class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-medium shadow hover:bg-green-700 transition">
                     Learn More
                 </a>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- Product Section -->
-<section class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Heading -->
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-            Our Products
-        </h2>
+<footer class="bg-green-900 text-gray-200 py-10">
+    <div class="max-w-8xl mx-auto px-4 sm:px-32 grid gap-10 md:grid-cols-3">
 
-        <!-- Grid Container for Products -->
-        <div id="product-container" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <!-- Company Info -->
+        <div class="text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start space-x-3 mb-4">
+                <img src="assets/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                <span class="text-xl font-bold">JAYKAY AGRI SOLUTIONS PVT LTD.</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                Empowering farmers with smart, sustainable, and data-driven solutions
+                for a brighter agricultural future.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                <li><a href="products.html" class="hover:text-white transition">Products</a></li>
+                <li><a href="contact-us.html" class="hover:text-white transition">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>📍</span>
+                    <span>3-12-117/A/11, P.S colony, Ramanthapur, Hyd-500013</span>
+                </li>
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>📞</span>
+                    <a href="tel:+919876543210" class="hover:text-white transition">+91 9398692368</a>
+                </li>
+                <li class="flex items-center justify-center md:justify-start space-x-2">
+                    <span>✉️</span>
+                    <a href="mailto:info@jaykayagri.com" class="hover:text-white transition">jkcustomercare123@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
-</section>
 
-<div id="footer"></div>
+    <!-- Bottom Line -->
+    <div class="border-t border-green-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+        © <span id="year"></span> Jaykay Agri Solutions. All rights reserved.
+    </div>
+</footer>
 
 <!-- Auto Year Script -->
 <script>
@@ -115,7 +234,92 @@
 
 
 <!-- Script -->
-<script src="products/products.js"></script>
+<script src="products.js"></script>
+
+<script src="data/product-data.js"></script>
+
+<!-- Categories JS -->
+<script>
+    // // Define categories data
+
+    const categoriesContainer = document.getElementById("categories-container");
+
+    categoriesData.forEach(cat => {
+        const card = document.createElement("div");
+        card.className = "min-w-full sm:min-w-[300px] bg-white rounded-xl shadow hover:shadow-lg transition snap-center cursor-pointer";
+        card.addEventListener("click", () => {
+            viewCategory(cat.id)
+        })
+
+        card.innerHTML = `
+        <img src="${cat.image}" alt="${cat.name}" class="w-full h-48 object-cover">
+        <div class="flex items-center justify-between p-6 text-center">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">${cat.name}</h3>
+          <a href="products.html?category_id=${cat.id}"
+             class="green-500 text-xs transition cursor-pointer">
+            <span class="material-icons">info</span>
+          </a>
+        </div>
+      `;
+        categoriesContainer.appendChild(card);
+    });
+
+    function viewCategory(id) {
+        window.location.href = `products.html?category_id=${id}`;
+    }
+</script>
+
+
+<script>
+    const featuredContainer = document.getElementById("featured-container");
+
+    const featuredProducts = productsData.filter(p => p.is_featured);
+
+    featuredProducts.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "flex-shrink-0 w-full sm:w-80 bg-white rounded-xl shadow hover:shadow-lg transition snap-center";
+        card.addEventListener("click", () => viewProduct(p.id));
+
+        card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}" class="w-full h-40 object-cover rounded-t-xl">
+        <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">${p.name}</h3>
+            <p class="text-sm text-gray-500 mb-2">${p.description}</p>
+        </div>
+    `;
+
+        featuredContainer.appendChild(card);
+    });
+
+
+    function viewProduct(id) {
+        window.location.href = `product.html?id=${id}`;
+    }
+
+    function startAutoScroll() {
+        const container = document.getElementById("featured-container");
+        const cards = container.querySelectorAll("div");
+        if (!cards.length) return;
+
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % cards.length;
+            const card = cards[index];
+
+            container.scrollTo({
+                left: card.offsetLeft - container.offsetLeft,
+                behavior: "smooth"
+            });
+        }, 1000);
+    }
+
+    startAutoScroll();
+
+</script>
+
+
+
 
 <script>
     lottie.loadAnimation({
@@ -126,4 +330,5 @@
         path: 'assets/coming_soon.json' // example animation
     });
 </script>
-<script src="include.js"></script>
+</body>
+</html>
